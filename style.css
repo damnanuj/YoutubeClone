@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+:root {
+  --black: #000000;
+  --gray-black: #121212;
+  --gray-medium: #212121;
+  --gray-light: #303030;
+}
+
+
+header {
+  background-color: #212121;
+  width: 100vw;
+  height: 70px;
+  border-bottom: 1.5px solid #303030;
+}
+
+header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+
+.logoRight {
+  display: flex;
+  align-items: center;
+  /* background-color: red; */
+  height: 100%;
+  margin-left: 50px;
+  gap: 1rem;
+}
+.fa-bars{
+  color: white;
+  font-size: 22px;
+
+}
+
+.logoText {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  /* background-color: blue; */
+  gap: 0.3rem;
+}
+.fa-youtube{
+  color: red;
+  font-size: 22px;
+}
+.YtText{
+  color: white;
+  font-size:20px ;
+  font-weight: 600;
+}
+
+.SearchBar {
+  display: flex;
+  width: 600px;
+  height: 45px;
+  align-items: center;
+  /* background-color: blue; */
+  justify-content: space-between;
+}
+
+.SearchBar .fa-magnifying-glass {
+  height: 100%;
+  width: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #303030;
+  color: white;
+}
+
+.SearchBar .fa-microphone {
+  background-color: var(--black);
+  height: 100%;
+  width: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  color: white;
+  margin-left: 10px;
+}
+
+.SearchBar input {
+  background-color: #121212;
+  height: 100%;
+  color: #AAAAAA;
+  flex-grow: 1;
+  padding-left: 20px;
+  outline: none;
+  border: none;
+  font-size: 18px;
+  border-bottom-left-radius: 30px;
+  border-top-left-radius: 30px;
+  border: 1.5px solid #303030;
+}
+
+.ProfileRight {
+  display: flex;
+  align-items: center;
+  /* background-color: red; */
+  margin-right: 50px;
+  height: 100%;
+  gap: 1.5rem;
+}
+
+.profile{
+  width: 40px; 
+  height: 40px; 
+  border-radius: 50%;
+}
+
+.fa-video, .fa-list-ul, .fa-bell{
+  color: white;
+  font-size: 22px;
+  font-weight: 400;
+}
