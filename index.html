@@ -1,119 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <title>Document</title>
-  </head>
 
-  <body>
-    <header>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>Document</title>
+</head>
 
-        <div class="logoRight">
-          <i class="fa-solid fa-bars"></i>
-          <div class="logoText">
-            <i class="fa-brands fa-youtube"></i>
-            <p class="YtText">YouTube</p>
-          </div>
-        </div>
+<body>
+  <header>
 
-        <!-- Search  Bar -->
-        <div class="SearchBar">
-          <input type="text" placeholder="Search" class="searchInput" />       
-          <i class="fa-solid fa-magnifying-glass"></i>
-          <i class="fa-solid fa-microphone"></i>
-        </div>
-
-        <div class="ProfileRight">
-          <i class="fa-solid fa-video"></i>
-          <i class="fa-solid fa-list-ul"></i>
-          <i class="fa-regular fa-bell"></i>
-          <img
-          class="profile"
-            src="imgs/profile.jpg"
-            alt="Profile"
-           
-          />
-        </div>
-    </header>
-
-    <div class="mainScreen">
-      <div class="leftNavBAr">  
-          <a class="navs" href="#">
-           <img src="imgs/home.svg" alt="">
-            <p>Home</p>
-          </a>
-          
-          <a class="navs" href="#">
-           <img src="imgs/explore.svg" alt="">
-            <p>Explore</p>
-          </a>
-          <a class="navs" href="#">
-           <img src="imgs/home.svg" alt="">
-            <p>Home</p>
-          </a>
-
-          <a class="navs" href="#">
-           <img src="imgs/explore.svg" alt="">
-            <p>Explore</p>
-          </a>
-          <a class="navs" href="#">
-           <img src="imgs/home.svg" alt="">
-            <p>Home</p>
-          </a>
-
-          <a class="navs" href="#">
-           <img src="imgs/explore.svg" alt="">
-            <p>Explore</p>
-          </a>
-          <a class="navs" href="#">
-           <img src="imgs/home.svg" alt="">
-            <p>Home</p>
-          </a>
-
-          <a class="navs" href="#">
-           <img src="imgs/explore.svg" alt="">
-            <p>Explore</p>
-          </a>
-          <a class="navs" href="#">
-           <img src="imgs/home.svg" alt="">
-            <p>Home</p>
-          </a>
-
-          <a class="navs" href="#">
-           <img src="imgs/explore.svg" alt="">
-            <p>Explore</p>
-          </a>
-          <a class="navs" href="#">
-           <img src="imgs/home.svg" alt="">
-            <p>Home</p>
-          </a>
-
-          <a class="navs" href="#">
-           <img src="imgs/explore.svg" alt="">
-            <p>Explore</p>
-          </a>
-          <a class="navs" href="#">
-           <img src="imgs/home.svg" alt="">
-            <p>Home</p>
-          </a>
-
-          <a class="navs" href="#">
-           <img src="imgs/explore.svg" alt="">
-            <p>Explore</p>
-          </a>
+    <div class="logoRight">
+      <i class="fa-solid fa-bars"></i>
+      <div class="logoText">
+        <i class="fa-brands fa-youtube"></i>
+        <p class="YtText">YouTube</p>
       </div>
-      <div class="rightVideosCard"></div>
     </div>
 
-    <script src="script.js"></script>
-  </body>
+    <!-- Search  Bar -->
+    <div class="SearchBar">
+      <input type="text" placeholder="Search" class="searchInput" />
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <i class="fa-solid fa-microphone"></i>
+    </div>
+
+    <div class="ProfileRight">
+      <i class="fa-solid fa-video"></i>
+      <i class="fa-solid fa-list-ul"></i>
+      <i class="fa-regular fa-bell"></i>
+      <img class="profile" src="imgs/profile.jpg" alt="Profile" />
+    </div>
+  </header>
+
+  <div class="mainScreen">
+    <div class="leftNavBAr">
+      <div class="homeExplore">
+        <a class="navs" href="#">
+          <img src="imgs/home.svg" alt="">
+           <p>Home</p>
+         </a>
+         
+         <a class="navs" href="#">
+          <img src="imgs/explore.svg" alt="">
+           <p>Explore</p>
+         </a>
+         <a class="navs" href="#">
+          <img src="imgs/subscription.svg" alt="">
+           <p>Subscriptions</p>
+         </a>
+
+
+
+
+
+      </div>
+      <div class="library"></div>
+      <div class="subscription"></div>
+      <div class="morefromYt"></div>
+
+    </div>
+    <div class="rightVideosCard"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
 </html>

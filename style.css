@@ -139,11 +139,9 @@ header {
 
 .leftNavBAr{
   width: 20%;
-  background-color: var(--gray-black);
+  background-color: blue;
   height: 100vh;
   overflow-y: scroll;
-  scrollbar-color: red orange;
-  scrollbar-width: thin;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -168,7 +166,10 @@ header {
 
 
 
-
+.homeExplore{
+  background-color: red;
+  width: 100%;
+}
 
 
 
@@ -179,8 +180,8 @@ header {
   background-color: var(--gray-light);
   display: flex;
   gap: 1.5rem;
-  width: 97%;
-  padding: 13px 0px 13px 0;
+  
+  padding: 13px 0 13px 0;
   margin-top: 10px;
   color: white;
   text-decoration: none;
