@@ -8,7 +8,9 @@
   text-decoration: none;
   list-style: none;
 }
-
+body::-webkit-scrollbar {
+  display: none; /* width of the entire scrollbar */
+ }
 :root {
   --black: #000000;
   --gray-black: #121212;
@@ -156,7 +158,7 @@ header {
 .mainScreen {
   background-color: var(--gray-black);
   width: 100%;
-  height: 100vh;
+  height: 89vh;
   display: flex;
   position: relative;
 }
@@ -226,6 +228,9 @@ header {
   margin-bottom: 5px;
   overflow-x: hidden;
 }
+.navs:hover {
+  background-color: var(--gray-light);
+}
 .navs a {
   width: max-content;
   overflow-x: hidden;
@@ -234,38 +239,153 @@ header {
   width: 20px;
 }
 
+
+/* **********************  Main video Container============ */
 .rightVideosCard {
   position: absolute;
   right: 0;
   bottom: 0;
   width: 80%;
-  height: 100vh;
+  height: 100%;
   background-color: var(--gray-black);
+  /* background-color: orangered; */
   transition: all 0.3s linear;
+
+  overflow-y: scroll;
+  
+}
+.rightVideosCard::-webkit-scrollbar {
+  width: 10px; /* width of the entire scrollbar */
 }
 
-.navs:hover {
-  background-color: var(--gray-light);
+/* .leftNavBAr::-webkit-scrollbar-track {
+         color of the tracking area
+} */
+
+.rightVideosCard::-webkit-scrollbar-thumb {
+  background-color: #4e4e4e; /* color of the scroll thumb */
+  border-radius: 20px;
+  /* roundness of the scroll thumb */
+  /* creates padding around scroll thumb */
 }
 
-.navs img {
-  /* background-color: red; */
+.suggestionHeading{
+  width: 100%;
+  height: 60px;
+  background-color: var(--gray-black);
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
+  overflow-x: scroll;
+  margin-bottom: 22px;
+  position: sticky;
+  top: 0;
+  padding: 0 25px 0 25px;
 }
+
+
+.suggestionHeading .items{
+  padding: 8px 15px;
+  background-color: var(--gray-medium);
+  
+  border-radius: 10px;
+}
+.items a{
+  color: white;
+  width: max-content;
+}
+.suggestionHeading::-webkit-scrollbar {
+ display: none; /* width of the entire scrollbar */
+}
+
+
+
+/* Video Card */
+
+.VideoCardsHolder{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns with equal width */
+  grid-row-gap: 15px;
+  padding: 0 25px 0 25px;
+}
+
+
+.videoCard{
+  /* background-color: aqua; */
+
+  width: 325px;
+  /* border: 1px solid var(--gray-light); */
+  border-radius: 11px ;
+
+}
+.bottomCard{
+  width: 100%;
+  margin-top: 5px;
+  /* background-color: orange; */
+  
+  display: flex;
+  gap: 1.2rem;
+}
+.thumbnail img{
+  width: 100%;
+  height: 160px;
+  border-radius: 10px;
+}
+.channelDP img{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.titleDisc{
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.vidTitle{
+  font-size: 18px;
+  color: white;
+  font-weight: 500;
+}
+.channelName{
+  color: gray;
+  font-size: 15px;
+  font-weight: 500;
+}
+.uploadTime{
+  color:gray;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+
+
+
+
+
+
+
+
+
 
 @media only screen and (max-width: 600px) {
+  header{
+    height: 56px;
+  }
   .rightVideosCard {
-    background-color: lightblue;
+    /* background-color: lightblue; */
     width: 100%;
   }
   .fa-youtube{
-    font-size: 25px;
+    font-size: 22px;
   }
   /* .logoText{
     display: flex;
     align-items: center;
   } */
   .YtText {
-   font-weight: 500;
+   font-weight: 400;
    margin-left: 4px;
   }
   .leftNavBAr {
@@ -293,7 +413,7 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-left: 76px;
+    margin-left: 110px;
   }
   .searchBtn {
     height: 0;
@@ -301,14 +421,37 @@ header {
 
     font-size: 20px;
   }
+  .ProfileRight {
+   
+    gap: 1.2rem;
+}
   .profile{
-    width: 35px;
-    height: 35px;
+    width: 32px;
+    height: 32px;
   }
+
   .ProfileRight {
     margin-right: 20px;
   }
   .logoRight {
     margin-left: 20px;
   }
+
+
+  .suggestionHeading {
+    padding: 0 15px 0 15px;
+  }
+  
+
+  .VideoCardsHolder {
+  
+    grid-template-columns: repeat(1, 1fr);
+    grid-row-gap: 15px;
+   
+}
+
+.mainScreen {
+  height: 93vh;
+ 
+}
 }
