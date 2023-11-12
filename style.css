@@ -1,11 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   text-decoration: none;
   list-style: none;
 }
@@ -16,7 +15,6 @@
   --gray-medium: #212121;
   --gray-light: #303030;
 }
-
 
 header {
   background-color: #212121;
@@ -31,8 +29,6 @@ header {
   z-index: 1000;
 }
 
-
-
 .logoRight {
   display: flex;
   align-items: center;
@@ -41,9 +37,9 @@ header {
   margin-left: 40px;
   gap: 1rem;
 }
-.bars{
- display: flex;
- align-items: center;
+.bars {
+  display: flex;
+  align-items: center;
 }
 
 .logoText {
@@ -53,13 +49,13 @@ header {
   /* background-color: blue; */
   gap: 0.3rem;
 }
-.fa-youtube{
+.fa-youtube {
   color: red;
   font-size: 22px;
 }
-.YtText{
+.YtText {
   color: white;
-  font-size:20px ;
+  font-size: 20px;
   font-weight: 600;
 }
 
@@ -72,7 +68,7 @@ header {
   justify-content: space-between;
 }
 
-.searchBtn{
+.searchBtn {
   background-color: #303030;
   height: 100%;
   width: 70px;
@@ -82,12 +78,11 @@ header {
   color: white;
   font-size: 20px;
   transition: all 0.2s ease-in-out;
-
 }
-.searchBtn:hover{
+.searchBtn:hover {
   background-color: var(--gray-black);
 }
-.mic{
+.mic {
   background-color: var(--black);
   height: 100%;
   width: 45px;
@@ -100,14 +95,14 @@ header {
   font-size: 20px;
   transition: all 0.2s ease-in-out;
 }
-.mic:hover{
+.mic:hover {
   background-color: var(--gray-light);
 }
 
 .SearchBar input {
   background-color: #121212;
   height: 100%;
-  color: #AAAAAA;
+  color: #aaaaaa;
   flex-grow: 1;
   padding-left: 20px;
   outline: none;
@@ -116,7 +111,6 @@ header {
   border-bottom-left-radius: 30px;
   border-top-left-radius: 30px;
   border: 1.5px solid #303030;
-
 }
 
 .ProfileRight {
@@ -126,51 +120,48 @@ header {
   height: 100%;
   gap: 1.5rem;
 }
-.ProfileRight a{
+.ProfileRight a {
   display: flex;
   justify-content: center;
   align-items: center;
   transition: all 0.2s ease-in-out;
 }
-.ProfileRight a:hover{
+.ProfileRight a:hover {
   /* transform: rotate(5deg); */
   transform: scale(1.1);
 }
-.ProfileRight a img{
+.ProfileRight a img {
   width: 19px;
 }
-#createVid >img{
+#createVid > img {
   width: 25px;
 }
 
-.profile{
-  width: 40px; 
-  height: 40px; 
+.profile {
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
 }
 
-.fa-video, .fa-list-ul, .fa-bell{
+.fa-video,
+.fa-list-ul,
+.fa-bell {
   color: white;
   font-size: 22px;
   font-weight: 400;
 }
 
-
-
-
 /* Main screeen */
 
-.mainScreen{
+.mainScreen {
   background-color: var(--gray-black);
   width: 100%;
-  height:100vh;
+  height: 100vh;
   display: flex;
   position: relative;
 }
 
-
-
-.leftNavBAr{
+.leftNavBAr {
   width: 20%;
   background-color: var(--gray-medium);
   overflow-y: scroll;
@@ -181,12 +172,11 @@ header {
   left: 0;
   bottom: 0;
   top: 0;
- transition: all 0.3s linear;
-  
+  transition: all 0.3s linear;
 }
 
 .leftNavBAr::-webkit-scrollbar {
-  width: 10px;   /* width of the entire scrollbar */
+  width: 10px; /* width of the entire scrollbar */
 }
 
 /* .leftNavBAr::-webkit-scrollbar-track {
@@ -194,31 +184,31 @@ header {
 } */
 
 .leftNavBAr::-webkit-scrollbar-thumb {
-  background-color: #4e4e4e;    /* color of the scroll thumb */
-  border-radius: 20px;   
-     /* roundness of the scroll thumb */
-    /* creates padding around scroll thumb */
+  background-color: #4e4e4e; /* color of the scroll thumb */
+  border-radius: 20px;
+  /* roundness of the scroll thumb */
+  /* creates padding around scroll thumb */
 }
 
-
-.homeExplore{
+.homeExplore {
   margin-top: 5px;
 }
-.homeExplore, .library{
+.homeExplore,
+.library {
   /* background-color: red; */
   width: 100%;
   border-bottom: 1.5px solid var(--gray-light);
   padding-bottom: 5px;
 }
-.library{
+.library {
   padding-top: 10px;
 }
 
-#activeNav{
+#activeNav {
   background-color: var(--gray-light);
 }
 
-.navs{
+.navs {
   width: 257px;
   /* background-color: blueviolet; */
   display: flex;
@@ -236,15 +226,15 @@ header {
   margin-bottom: 5px;
   overflow-x: hidden;
 }
-.navs a{
+.navs a {
   width: max-content;
   overflow-x: hidden;
 }
-.navs img{
+.navs img {
   width: 20px;
 }
 
-.rightVideosCard{
+.rightVideosCard {
   position: absolute;
   right: 0;
   bottom: 0;
@@ -254,10 +244,71 @@ header {
   transition: all 0.3s linear;
 }
 
-.navs:hover{
+.navs:hover {
   background-color: var(--gray-light);
 }
 
-.navs img{
+.navs img {
   /* background-color: red; */
+}
+
+@media only screen and (max-width: 600px) {
+  .rightVideosCard {
+    background-color: lightblue;
+    width: 100%;
+  }
+  .fa-youtube{
+    font-size: 25px;
+  }
+  /* .logoText{
+    display: flex;
+    align-items: center;
+  } */
+  .YtText {
+   font-weight: 500;
+   margin-left: 4px;
+  }
+  .leftNavBAr {
+    display: none;
+  }
+  .SearchBar input {
+    display: none;
+  }
+  .mic {
+    display: none;
+  }
+  #dots {
+    display: none;
+  }
+  #createVid {
+    display: none;
+  }
+  .bars{
+   display: none;
+}
+
+  .SearchBar {
+    width: 50px;
+    /* background-color: red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 76px;
+  }
+  .searchBtn {
+    height: 0;
+    width: 0;
+
+    font-size: 20px;
+  }
+  .profile{
+    width: 35px;
+    height: 35px;
+  }
+  .ProfileRight {
+    margin-right: 20px;
+  }
+  .logoRight {
+    margin-left: 20px;
+  }
 }
