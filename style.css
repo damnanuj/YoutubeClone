@@ -136,19 +136,25 @@ header {
   width: 100%;
   height:100vh;
   display: flex;
+  position: relative;
 }
+
+
 
 .leftNavBAr{
   width: 20%;
-  background-color: var(--gray-black);
-  height: 100vh;
+  background-color: var(--gray-medium);
   overflow-y: scroll;
   display: flex;
   flex-direction: column;
   align-items: center;
-
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  top: 0;
+ transition: all 0.3s linear;
+  
 }
-
 
 .leftNavBAr::-webkit-scrollbar {
   width: 10px;   /* width of the entire scrollbar */
@@ -166,12 +172,14 @@ header {
 }
 
 
-
+.homeExplore{
+  margin-top: 5px;
+}
 .homeExplore, .library{
   /* background-color: red; */
   width: 100%;
   border-bottom: 1.5px solid var(--gray-light);
-  padding-bottom: 10px;
+  padding-bottom: 5px;
 }
 .library{
   padding-top: 10px;
@@ -182,10 +190,10 @@ header {
 }
 
 .navs{
-  /* background-color: var(--gray-light); */
+  width: 257px;
+  /* background-color: blueviolet; */
   display: flex;
   gap: 1.5rem;
-  
   padding: 13px 0 13px 0;
   /* margin-top: 10px; */
   color: white;
@@ -195,18 +203,31 @@ header {
   font-size: 17px;
   font-weight: 300;
   padding-left: 40px;
+  transition: all 0.3s ease-in-out;
+  margin-bottom: 5px;
+  overflow-x: hidden;
+}
+.navs a{
+  width: max-content;
+  overflow-x: hidden;
 }
 .navs img{
   width: 20px;
 }
 
 .rightVideosCard{
+  position: absolute;
+  right: 0;
+  bottom: 0;
   width: 80%;
   height: 100vh;
   background-color: chocolate;
+  transition: all 0.3s linear;
 }
 
-
+.navs:hover{
+  background-color: var(--gray-light);
+}
 
 .navs img{
   /* background-color: red; */
