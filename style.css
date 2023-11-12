@@ -6,6 +6,8 @@
   margin: 0;
   box-sizing: border-box;
   font-family: 'Roboto', sans-serif;
+  text-decoration: none;
+  list-style: none;
 }
 
 :root {
@@ -36,10 +38,9 @@ header {
   margin-left: 40px;
   gap: 1rem;
 }
-.fa-bars{
-  color: white;
-  font-size: 22px;
-
+.bars{
+ display: flex;
+ align-items: center;
 }
 
 .logoText {
@@ -139,7 +140,7 @@ header {
 
 .leftNavBAr{
   width: 20%;
-  background-color: blue;
+  background-color: var(--gray-black);
   height: 100vh;
   overflow-y: scroll;
   display: flex;
@@ -166,29 +167,33 @@ header {
 
 
 
-.homeExplore{
-  background-color: red;
+.homeExplore, .library{
+  /* background-color: red; */
   width: 100%;
+  border-bottom: 1.5px solid var(--gray-light);
+  padding-bottom: 10px;
+}
+.library{
+  padding-top: 10px;
 }
 
-
-
-
-
+#activeNav{
+  background-color: var(--gray-light);
+}
 
 .navs{
-  background-color: var(--gray-light);
+  /* background-color: var(--gray-light); */
   display: flex;
   gap: 1.5rem;
   
   padding: 13px 0 13px 0;
-  margin-top: 10px;
+  /* margin-top: 10px; */
   color: white;
   text-decoration: none;
   align-items: center;
   border-radius: 3px;
   font-size: 17px;
-  font-weight: 400;
+  font-weight: 300;
   padding-left: 40px;
 }
 .navs img{
