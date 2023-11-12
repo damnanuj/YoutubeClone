@@ -72,17 +72,22 @@ header {
   justify-content: space-between;
 }
 
-.SearchBar .fa-magnifying-glass {
+.searchBtn{
+  background-color: #303030;
   height: 100%;
   width: 70px;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #303030;
   color: white;
-}
+  font-size: 20px;
+  transition: all 0.2s ease-in-out;
 
-.SearchBar .fa-microphone {
+}
+.searchBtn:hover{
+  background-color: var(--gray-black);
+}
+.mic{
   background-color: var(--black);
   height: 100%;
   width: 45px;
@@ -92,6 +97,11 @@ header {
   border-radius: 50%;
   color: white;
   margin-left: 10px;
+  font-size: 20px;
+  transition: all 0.2s ease-in-out;
+}
+.mic:hover{
+  background-color: var(--gray-light);
 }
 
 .SearchBar input {
@@ -106,15 +116,31 @@ header {
   border-bottom-left-radius: 30px;
   border-top-left-radius: 30px;
   border: 1.5px solid #303030;
+
 }
 
 .ProfileRight {
   display: flex;
   align-items: center;
-  /* background-color: red; */
   margin-right: 40px;
   height: 100%;
   gap: 1.5rem;
+}
+.ProfileRight a{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s ease-in-out;
+}
+.ProfileRight a:hover{
+  /* transform: rotate(5deg); */
+  transform: scale(1.1);
+}
+.ProfileRight a img{
+  width: 19px;
+}
+#createVid >img{
+  width: 25px;
 }
 
 .profile{
