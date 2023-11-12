@@ -269,7 +269,7 @@ header {
    margin-left: 4px;
   }
   .leftNavBAr {
-    display: none;
+    width: 0;
   }
   .SearchBar input {
     display: none;
