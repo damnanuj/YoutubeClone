@@ -40,7 +40,7 @@ search.addEventListener("click", function (e) {
   let TargetClass = e.target.classList;
   console.log(TargetClass);
 
-  if (TargetClass.contains("fa-magnifying-glass")) {
+  if ((TargetClass.contains("fa-magnifying-glass")) && (width <= 600)) {
     console.log("Anuj");
     logoRight.style.display = "none";
 
@@ -59,14 +59,19 @@ search.addEventListener("click", function (e) {
     searchBtn.style.borderBottomRightRadius = "30px";
     searchBtn.style.borderTopRightRadius = "30px";
   }
+  else{
+    console.log("Outside");
+  }
 });
 
+// WindowsScreen Width Calculating
+let width ;
 function updateSizeInfo() {
-  const width = window.innerWidth;
+   width = window.innerWidth;
   // document.getElementById('size-info').textContent = `Current window width: ${width}px`;
   console.log(`Current window width: ${width}px`);
   if (width > 600) {
-    console.log("harry");
+    console.log("Bigger Than 600");
   }
 }
 
