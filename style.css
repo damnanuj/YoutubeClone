@@ -440,14 +440,26 @@ header {
 
   .suggestionHeading {
     padding: 0 15px 0 15px;
+    margin-bottom: 2px;
+    /* background-color: red; */
+    width: 100%;
   }
   
 
   .VideoCardsHolder {
-  
+  /* background-color: red; */
     grid-template-columns: repeat(1, 1fr);
     grid-row-gap: 15px;
+    justify-content: center;
    
+}
+.videoCard{
+  /* background-color: aqua; */
+
+  width: 365px;
+  /* border: 1px solid var(--gray-light); */
+  border-radius: 11px ;
+
 }
 
 .mainScreen {
