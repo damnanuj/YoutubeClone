@@ -43,6 +43,7 @@ search.addEventListener("click", function (e) {
     logoRight.style.display = "none";
 
     searchInput.style.display = "block";
+    searchInput.style.flexGrow = "0";
 
     SearchBar.style.marginLeft = "15px";
     SearchBar.style.width = "290px";

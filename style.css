@@ -101,7 +101,7 @@ header {
   background-color: var(--gray-light);
 }
 
-.SearchBar input {
+.searchInput {
   background-color: #121212;
   height: 100%;
   color: #aaaaaa;
