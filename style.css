@@ -10,7 +10,7 @@
 }
 body::-webkit-scrollbar {
   display: none; /* width of the entire scrollbar */
- }
+}
 :root {
   --black: #000000;
   --gray-black: #121212;
@@ -239,7 +239,6 @@ header {
   width: 20px;
 }
 
-
 /* **********************  Main video Container============ */
 .rightVideosCard {
   position: absolute;
@@ -252,7 +251,6 @@ header {
   transition: all 0.3s linear;
 
   overflow-y: scroll;
-  
 }
 .rightVideosCard::-webkit-scrollbar {
   width: 10px; /* width of the entire scrollbar */
@@ -269,7 +267,7 @@ header {
   /* creates padding around scroll thumb */
 }
 
-.suggestionHeading{
+.suggestionHeading {
   width: 100%;
   height: 60px;
   background-color: var(--gray-black);
@@ -283,115 +281,99 @@ header {
   padding: 0 25px 0 25px;
 }
 
-
-.suggestionHeading .items{
+.suggestionHeading .items {
   padding: 8px 15px;
   background-color: var(--gray-medium);
-  
+
   border-radius: 10px;
 }
-.items a{
+.items a {
   color: white;
   width: max-content;
 }
 .suggestionHeading::-webkit-scrollbar {
- display: none; /* width of the entire scrollbar */
+  display: none; /* width of the entire scrollbar */
 }
-
-
 
 /* Video Card */
 
-.VideoCardsHolder{
+.VideoCardsHolder {
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* 3 columns with equal width */
   grid-row-gap: 15px;
   padding: 0 25px 0 25px;
 }
 
-
-.videoCard{
+.videoCard {
   /* background-color: aqua; */
 
   width: 325px;
   /* border: 1px solid var(--gray-light); */
-  border-radius: 11px ;
-
+  border-radius: 11px;
 }
-.bottomCard{
+.bottomCard {
   width: 100%;
   margin-top: 5px;
   /* background-color: orange; */
-  
+
   display: flex;
   gap: 1.2rem;
 }
-.thumbnail img{
+.thumbnail img {
   width: 100%;
   height: 160px;
   border-radius: 10px;
 }
-.channelDP img{
+.channelDP img {
   width: 40px;
   height: 40px;
   border-radius: 50%;
 }
 
-.titleDisc{
+.titleDisc {
   display: flex;
   flex-direction: column;
   gap: 0.3rem;
 }
 
-.vidTitle{
+.vidTitle {
   font-size: 18px;
   color: white;
   font-weight: 500;
 }
-.channelName{
+.channelName {
   color: gray;
   font-size: 15px;
   font-weight: 500;
 }
-.uploadTime{
-  color:gray;
+.uploadTime {
+  color: gray;
   font-size: 14px;
   font-weight: 500;
 }
 
-
-
-
-
-
-
-
-
-
-
 @media only screen and (max-width: 600px) {
-  header{
+  header {
     height: 56px;
   }
   .rightVideosCard {
-    /* background-color: lightblue; */
     width: 100%;
   }
-  .fa-youtube{
+  .fa-youtube {
     font-size: 22px;
   }
-  /* .logoText{
+  .logoText{
     display: flex;
     align-items: center;
-  } */
+  }
   .YtText {
-   font-weight: 400;
-   margin-left: 4px;
+    font-weight: 400;
+    margin-left: 4px;
   }
   .leftNavBAr {
     width: 0;
   }
-  .SearchBar input {
+  .searchInput{
     display: none;
   }
   .mic {
@@ -403,17 +385,19 @@ header {
   #createVid {
     display: none;
   }
-  .bars{
-   display: none;
-}
+  .bars {
+    display: none;
+  }
+  .notiBell{
+    display: none;
+  }
 
   .SearchBar {
-    width: 50px;
-    /* background-color: red; */
+    margin-left: 160px;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-left: 110px;
+    
   }
   .searchBtn {
     height: 0;
@@ -422,10 +406,9 @@ header {
     font-size: 20px;
   }
   .ProfileRight {
-   
     gap: 1.2rem;
-}
-  .profile{
+  }
+  .profile {
     width: 32px;
     height: 32px;
   }
@@ -437,33 +420,108 @@ header {
     margin-left: 20px;
   }
 
+  .suggestionHeading {
+    padding: 0 15px 0 15px;
+    margin-bottom: 2px;
+    width: 100%;
+  }
+
+  .VideoCardsHolder {
+    grid-template-columns: repeat(1, 1fr);
+    grid-row-gap: 15px;
+    justify-content: center;
+  }
+  .videoCard {
+
+    width: 365px;
+    border-radius: 11px;
+  }
+
+  .mainScreen {
+    height: 93vh;
+  }
+} 
+
+
+/* @media only screen and (max-width: 600px) {
+  header {
+    height: 60px;
+  }
+  .rightVideosCard {
+    width: 100%;
+  }
+  .leftNavBAr {
+    width: 0;
+  }
+  .logoRight{
+    display: none;
+  }
+  .mic {
+    display: none;
+  }
+  #dots {
+    display: none;
+  }
+  #createVid {
+    display: none;
+  }
+  .notiBell {
+    display: none;
+  }
+  .bars {
+    display: none;
+  }
+  .SearchBar{
+    margin-left: 20px;
+  }
+
+  .searchBtn {
+    width: 65px;
+    border-bottom-right-radius: 30px;
+    border-top-right-radius: 30px;
+  }
+  .searchInput {
+    border-bottom-left-radius: 30px;
+    border-top-left-radius: 30px;
+  }
+
+
+
+  .ProfileRight {
+    width: 50px;
+  }
+  .ProfileRight {
+    gap: 1.2rem;
+  }
+  .profile {
+    width: 32px;
+    height: 32px;
+  }
+
+  .ProfileRight {
+    margin-right: 20px;
+  }
+  .logoRight {
+    margin-left: 20px;
+  }
 
   .suggestionHeading {
     padding: 0 15px 0 15px;
     margin-bottom: 2px;
-    /* background-color: red; */
     width: 100%;
   }
-  
 
   .VideoCardsHolder {
-  /* background-color: red; */
     grid-template-columns: repeat(1, 1fr);
     grid-row-gap: 15px;
     justify-content: center;
-   
-}
-.videoCard{
-  /* background-color: aqua; */
+  }
+  .videoCard {
+    width: 365px;
+    border-radius: 11px;
+  }
 
-  width: 365px;
-  /* border: 1px solid var(--gray-light); */
-  border-radius: 11px ;
-
-}
-
-.mainScreen {
-  height: 93vh;
- 
-}
-}
+  .mainScreen {
+    height: 93vh;
+  }
+} */
