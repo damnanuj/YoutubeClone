@@ -45,9 +45,11 @@ search.addEventListener("click", function (e) {
     searchInput.style.display = "block";
 
     SearchBar.style.marginLeft = "15px";
+    SearchBar.style.width = "290px";
 
-    searchBtn.style.width = "65px";
+    searchBtn.style.width = "55px";
     searchBtn.style.height = "100%";
+    searchBtn.style.transition = "none";
     searchBtn.style.backgroundColor = "#303030";
     searchBtn.style.borderBottomRightRadius = "30px";
     searchBtn.style.borderTopRightRadius = "30px";
