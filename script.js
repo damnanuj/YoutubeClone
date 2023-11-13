@@ -46,11 +46,12 @@ search.addEventListener("click", function (e) {
 
     searchInput.style.display = "block";
     searchInput.style.flexGrow = "0";
+    SearchBar.style.width = "270px";
 
     ProfileRight.style.marginRight="30px";
 
     SearchBar.style.marginLeft = "15px";
-    SearchBar.style.width = "330px";
+    // SearchBar.style.width = "330px";
 
     searchBtn.style.width = "55px";
     searchBtn.style.height = "100%";

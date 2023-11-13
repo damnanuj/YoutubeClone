@@ -355,6 +355,7 @@ header {
 @media only screen and (max-width: 600px) {
   header {
     height: 56px;
+    justify-content: center;
   }
   .rightVideosCard {
     width: 100%;
