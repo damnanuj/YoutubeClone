@@ -33,6 +33,8 @@ const SearchBar = document.querySelector(".SearchBar");
 const searchInput = document.querySelector(".searchInput");
 const logoRight = document.querySelector(".logoRight");
 const searchBtn = document.querySelector(".searchBtn");
+const ProfileRight = document.querySelector(".ProfileRight");
+
 
 search.addEventListener("click", function (e) {
   let TargetClass = e.target.classList;
@@ -44,6 +46,8 @@ search.addEventListener("click", function (e) {
 
     searchInput.style.display = "block";
     searchInput.style.flexGrow = "0";
+
+    ProfileRight.style.marginRight="30px";
 
     SearchBar.style.marginLeft = "15px";
     SearchBar.style.width = "330px";
