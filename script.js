@@ -46,7 +46,7 @@ search.addEventListener("click", function (e) {
     searchInput.style.flexGrow = "0";
 
     SearchBar.style.marginLeft = "15px";
-    SearchBar.style.width = "290px";
+    SearchBar.style.width = "330px";
 
     searchBtn.style.width = "55px";
     searchBtn.style.height = "100%";
