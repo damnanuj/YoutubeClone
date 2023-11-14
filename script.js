@@ -18,14 +18,6 @@ function hideLeftNav(e) {
     rightVideosCard.style.width = "80%"; //making main screen 80% when nav visible
     // mainScreenFlag = false;
   }
-  //   if (window.innerWidth <= 600) {
-  //      console.log('open')
-  //       leftNavBar.style.width = "0";
-  //       rightVideosCard.style.width = "100%";
-  //     }
-  //     else {
-  //      console.log('closed');
-  //     }
 }
 
 const search = document.querySelector(".fa-magnifying-glass");
