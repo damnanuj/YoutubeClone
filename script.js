@@ -11,7 +11,12 @@ function hideLeftNav(e) {
 
   if (leftNavBar.classList.contains("hideNav")) {
     leftNavBar.style.width = "0";
-    rightVideosCard.style.width = "100%"; //making main screen full when nav hidden
+    rightVideosCard.style.width = "100%";//making main screen full when nav hidden
+    thumbImg.style.height ="195px" ;
+    videoCard.style.width = "405px";
+    VideoCardsHolder.style.paddingLeft = "45px";
+    VideoCardsHolder.style.paddingRight = "45px";
+
     // mainScreenFlag = true
   } else {
     leftNavBar.style.width = "20%";
@@ -27,6 +32,8 @@ const logoRight = document.querySelector(".logoRight");
 const searchBtn = document.querySelector(".searchBtn");
 const ProfileRight = document.querySelector(".ProfileRight");
 const VideoCardsHolder = document.querySelector(".VideoCardsHolder");
+const thumbImg = document.querySelector(".thumbImg");
+let videoCard;
 
 // for mobile view only
 search.addEventListener("click", function (e) {
@@ -74,7 +81,7 @@ updateSizeInfo();
 /* 
     <div class="videoCard">
             <div class="thumbnail">
-              <img src="imgs/thumbnail1.jpg" alt="" />
+              <img class="thumbImg"  src="imgs/thumbnail1.jpg" alt="" />
               <p class="timeStamp">5:10</p>
             </div>
             <div class="bottomCard">
@@ -99,11 +106,11 @@ function renderVideosOntoUI(videosList) {
   VideoCardsHolder.innerHTML = "";
   //videosList will be an array of videos objects
   videosList.forEach((video) => {
-    const videoCard = document.createElement("div");
+    videoCard = document.createElement("div");
     videoCard.className = "videoCard";
     videoCard.innerHTML = `
     <div class="thumbnail">
-    <img 
+    <img class="thumbImg" 
     src="${video.snippet.thumbnails.high.url}"
      alt="thumbnail" />
     <p class="timeStamp">5:10</p>
@@ -135,7 +142,8 @@ async function fetchSearchResults(searcString) {
     console.log(result);
 
     renderVideosOntoUI(result.items);
-  } catch (error) {
+  } 
+  catch (error) {
     alert("Some error occured");
   }
 }
