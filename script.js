@@ -71,8 +71,6 @@ function updateSizeInfo() {
 window.addEventListener("resize", updateSizeInfo);
 updateSizeInfo();
 
-
-
 /* 
     <div class="videoCard">
             <div class="thumbnail">
@@ -97,9 +95,8 @@ updateSizeInfo();
 const apiKey = "AIzaSyCOzdiObyNRRonxDD24O20i0TcZY-dth20";
 const baseUrl = "https://www.googleapis.com/youtube/v3";
 
-
 function renderVideosOntoUI(videosList) {
-  VideoCardsHolder.innerHTML ="";
+  VideoCardsHolder.innerHTML = "";
   //videosList will be an array of videos objects
   videosList.forEach((video) => {
     const videoCard = document.createElement("div");
@@ -124,7 +121,7 @@ function renderVideosOntoUI(videosList) {
     </div>
   </div>`;
 
-  VideoCardsHolder.appendChild(videoCard);
+    VideoCardsHolder.appendChild(videoCard);
   });
 }
 
@@ -148,7 +145,7 @@ searchBtn.addEventListener("click", () => {
   console.log(searchValue);
   fetchSearchResults(searchValue);
 });
-
+fetchSearchResults("Ben 10 omnitrix full episodes");
 /**
  * {
     "kind": "youtube#searchResult",

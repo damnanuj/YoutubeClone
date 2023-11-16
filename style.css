@@ -254,20 +254,7 @@ header {
 
   /* overflow-y: scroll; */
 }
-.rightVideosCard::-webkit-scrollbar {
-  width: 10px; /* width of the entire scrollbar */
-}
 
-/* .leftNavBAr::-webkit-scrollbar-track {
-         color of the tracking area
-} */
-
-.rightVideosCard::-webkit-scrollbar-thumb {
-  background-color: #4e4e4e; /* color of the scroll thumb */
-  border-radius: 20px;
-  /* roundness of the scroll thumb */
-  /* creates padding around scroll thumb */
-}
 
 .suggestionHeading {
   width: 100%;
@@ -305,9 +292,24 @@ header {
   height: 87%;
   grid-template-columns: repeat(3, 1fr); /* 3 columns with equal width */
   grid-row-gap: 15px;
+  grid-column-gap: 15px;
   padding: 0 25px 0 25px;
   /* background-color: red; */
   overflow-y: scroll;
+}
+.VideoCardsHolder::-webkit-scrollbar {
+  width: 10px; /* width of the entire scrollbar */
+}
+
+/* .leftNavBAr::-webkit-scrollbar-track {
+         color of the tracking area
+} */
+
+.VideoCardsHolder::-webkit-scrollbar-thumb {
+  background-color: #4e4e4e; /* color of the scroll thumb */
+  border-radius: 20px;
+  /* roundness of the scroll thumb */
+  /* creates padding around scroll thumb */
 }
 
 .videoCard {
@@ -354,18 +356,18 @@ header {
 }
 
 .vidTitle {
-  font-size: 18px;
+  font-size: 16px;
   color: white;
   font-weight: 500;
 }
 .channelName {
   color: gray;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 500;
 }
 .uploadTime {
   color: gray;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 500;
 }
 
