@@ -70,3 +70,13 @@ function updateSizeInfo() {
 // Call the function initially and on window resize
 window.addEventListener("resize", updateSizeInfo);
 updateSizeInfo();
+
+
+
+
+
+// video cards adding dynamically--------------------
+
+const VideoCardsHolder = document.querySelector(".VideoCardsHolder");
+
+document.createElement
