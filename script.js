@@ -2,7 +2,6 @@ const bars = document.querySelector(".bars");
 const leftNavBar = document.querySelector(".leftNavBAr");
 const rightVideosCard = document.querySelector(".rightVideosCard");
 
-
 const search = document.querySelector(".fa-magnifying-glass");
 const SearchBar = document.querySelector(".SearchBar");
 const searchInput = document.querySelector(".searchInput");
@@ -23,7 +22,7 @@ function hideLeftNav(e) {
 
   if (leftNavBar.classList.contains("hideNav")) {
     leftNavBar.style.width = "0";
-    rightVideosCard.style.width = "100%";//making main screen full when nav hidden
+    rightVideosCard.style.width = "100%"; //making main screen full when nav hidden
 
     // width: 460px;
     // height: 250px;
@@ -41,8 +40,6 @@ function hideLeftNav(e) {
     // mainScreenFlag = false;
   }
 }
-
-
 
 // for mobile view only
 search.addEventListener("click", function (e) {
@@ -111,6 +108,21 @@ updateSizeInfo();
 const apiKey = "AIzaSyCOzdiObyNRRonxDD24O20i0TcZY-dth20";
 const baseUrl = "https://www.googleapis.com/youtube/v3";
 
+// THis function will take video id and returns the statics of the video
+
+async function getVideoStatistics(videoId) {
+  // https://www.googleapis.com/youtube/v3/search?key={apiKey}&part=snippet&q=js&type=video
+  const endpoint = `${baseUrl}/videos?key=${apiKey}&part=statistics&id=${videoId}`;
+
+  try {
+    const response = await fetch(endpoint);
+    const result = await response.json();
+    return result.item[0].statistics;
+  } catch (error) {
+    console.log("failed to load statistics");
+  }
+}
+
 function renderVideosOntoUI(videosList) {
   VideoCardsHolder.innerHTML = "";
   //videosList will be an array of videos objects
@@ -151,8 +163,7 @@ async function fetchSearchResults(searcString) {
     console.log(result);
 
     renderVideosOntoUI(result.items);
-  } 
-  catch (error) {
+  } catch (error) {
     alert("Some error occured");
   }
 }
