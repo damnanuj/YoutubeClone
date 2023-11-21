@@ -2,28 +2,6 @@ const bars = document.querySelector(".bars");
 const leftNavBar = document.querySelector(".leftNavBAr");
 const rightVideosCard = document.querySelector(".rightVideosCard");
 
-// Hide show Side Navbar Function
-bars.addEventListener("click", hideLeftNav);
-// let mainScreenFlag;
-function hideLeftNav(e) {
-  e.preventDefault();
-  leftNavBar.classList.toggle("hideNav"); //adding a class to hide side nav
-
-  if (leftNavBar.classList.contains("hideNav")) {
-    leftNavBar.style.width = "0";
-    rightVideosCard.style.width = "100%";//making main screen full when nav hidden
-    thumbImg.style.height ="195px" ;
-    videoCard.style.width = "405px";
-    VideoCardsHolder.style.paddingLeft = "45px";
-    VideoCardsHolder.style.paddingRight = "45px";
-
-    // mainScreenFlag = true
-  } else {
-    leftNavBar.style.width = "20%";
-    rightVideosCard.style.width = "80%"; //making main screen 80% when nav visible
-    // mainScreenFlag = false;
-  }
-}
 
 const search = document.querySelector(".fa-magnifying-glass");
 const SearchBar = document.querySelector(".SearchBar");
@@ -34,6 +12,37 @@ const ProfileRight = document.querySelector(".ProfileRight");
 const VideoCardsHolder = document.querySelector(".VideoCardsHolder");
 const thumbImg = document.querySelector(".thumbImg");
 let videoCard;
+const thumbnail = document.querySelector(".thumbnail");
+
+// Hide show Side Navbar Function
+bars.addEventListener("click", hideLeftNav);
+// let mainScreenFlag;
+function hideLeftNav(e) {
+  e.preventDefault();
+  leftNavBar.classList.toggle("hideNav"); //adding a class to hide side nav
+
+  if (leftNavBar.classList.contains("hideNav")) {
+    leftNavBar.style.width = "0";
+    rightVideosCard.style.width = "100%";//making main screen full when nav hidden
+
+    // width: 460px;
+    // height: 250px;
+    // thumbnail.style.width = "460px";
+    // thumbnail.style.height = "250px";
+
+    // videoCard.style.width = "405px";
+    // VideoCardsHolder.style.paddingLeft = "45px";
+    // VideoCardsHolder.style.paddingRight = "45px";
+
+    // mainScreenFlag = true
+  } else {
+    leftNavBar.style.width = "20%";
+    rightVideosCard.style.width = "80%"; //making main screen 80% when nav visible
+    // mainScreenFlag = false;
+  }
+}
+
+
 
 // for mobile view only
 search.addEventListener("click", function (e) {
