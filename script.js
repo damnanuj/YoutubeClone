@@ -179,7 +179,7 @@ function renderVideosOntoUI(videosList) {
 
 async function fetchSearchResults(searcString) {
   //searcString is the search input user entering
-  const endPoint = `${baseUrl}/search?key=${apiKey}&q=${searcString}&part=snippet&maxResults=10`;
+  const endPoint = `${baseUrl}/search?key=${apiKey}&q=${searcString}&part=snippet&maxResults=5`;
   console.log(`searchValue ${searcString}`);
   try {
     const response = await fetch(endPoint);
