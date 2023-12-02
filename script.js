@@ -188,7 +188,7 @@ async function fetchSearchResults(searcString) {
 
     renderVideosOntoUI(result.items);
   } catch (error) {
-    alert("Some error occured");
+    alert("10,000 query per day exhausted");
   }
 }
 
