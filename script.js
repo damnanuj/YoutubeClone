@@ -122,6 +122,30 @@ async function getVideoStatistics(videoId) {
     console.log("failed to load statistics");
   }
 }
+// Calculating Upload time
+function calculateTheTimeGap(publishTime) {
+  let publishDate = new Date(publishTime);
+  let currentDate = new Date();
+
+  let secondsGap = (currentDate.getTime() - publishDate.getTime()) / 1000;
+
+  const secondsPerDay = 24 * 60 * 60;
+  const secondsPerWeek = 7 * secondsPerDay;
+  const secondsPerMonth = 30 * secondsPerDay;
+  const secondsPerYear = 365 * secondsPerDay;
+
+  if (secondsGap < secondsPerDay) {
+    return `${Math.ceil(secondsGap / (60 * 60))}hrs ago`;
+  }
+  if (secondsGap < secondsPerWeek) {
+    return `${Math.ceil(secondsGap / secondsPerWeek)} weeks ago`;
+  }
+  if (secondsGap < secondsPerMonth) {
+    return `${Math.ceil(secondsGap / secondsPerMonth)} months ago`;
+  }
+
+  return `${Math.ceil(secondsGap / secondsPerYear)} years ago`;
+}
 
 function renderVideosOntoUI(videosList) {
   VideoCardsHolder.innerHTML = "";
@@ -145,7 +169,7 @@ function renderVideosOntoUI(videosList) {
        ${video.snippet.title}
       </p>
       <p class="channelName">${video.snippet.channelTitle}</p>
-      <p class="uploadTime">35M views • 6 days ago</p>
+      <p class="uploadTime">35M views • ${calculateTheTimeGap(video.snippet.publishTime)}</p>
     </div>
   </div>`;
 
@@ -155,7 +179,7 @@ function renderVideosOntoUI(videosList) {
 
 async function fetchSearchResults(searcString) {
   //searcString is the search input user entering
-  const endPoint = `${baseUrl}/search?key=${apiKey}&q=${searcString}&part=snippet&maxResults=20`;
+  const endPoint = `${baseUrl}/search?key=${apiKey}&q=${searcString}&part=snippet&maxResults=10`;
   console.log(`searchValue ${searcString}`);
   try {
     const response = await fetch(endPoint);
