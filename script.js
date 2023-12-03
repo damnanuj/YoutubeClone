@@ -108,20 +108,6 @@ updateSizeInfo();
 const apiKey = "AIzaSyCOzdiObyNRRonxDD24O20i0TcZY-dth20";
 const baseUrl = "https://www.googleapis.com/youtube/v3";
 
-// THis function will take video id and returns the statics of the video
-
-async function getVideoStatistics(videoId) {
-  // https://www.googleapis.com/youtube/v3/search?key={apiKey}&part=snippet&q=js&type=video
-  const endpoint = `${baseUrl}/videos?key=${apiKey}&part=statistics&id=${videoId}`;
-
-  try {
-    const response = await fetch(endpoint);
-    const result = await response.json();
-    return result.item[0].statistics;
-  } catch (error) {
-    console.log("failed to load statistics");
-  }
-}
 // Calculating Upload time
 function calculateTheTimeGap(publishTime) {
   let publishDate = new Date(publishTime);
@@ -146,6 +132,62 @@ function calculateTheTimeGap(publishTime) {
 
   return `${Math.ceil(secondsGap / secondsPerYear)} years ago`;
 }
+// THis function will take video id and returns the statics of the video
+
+async function getVideoStatistics(videoId) {
+  // https://www.googleapis.com/youtube/v3/search?key={apiKey}&part=snippet&q=js&type=video
+  const endpoint = `${baseUrl}/videos?key=${apiKey}&part=statistics&id=${videoId}`;
+
+  try {
+    const response = await fetch(endpoint);
+    const result = await response.json();
+    // console.log(result);
+    return result.items[0].statistics;
+  } catch (error) {
+    console.log("failed to load statistics");
+  }
+}
+// getVideoStatistics('zt5Vc_ZU6AU');
+
+// fetching channel Logo
+async function fetchChannelLogo(channelId){
+  const endPoint = `${baseUrl}/channels?key=${apiKey}&id=${channelId}&part=snippet`;
+  try {
+    const response = await fetch(endPoint) ;
+    const result = await response.json();
+    return result.items[0].snippet.thumbnails.high.url;
+  } catch (error) {
+    console.log(`Failed to load channel logo for ${channelId}`);
+  }
+}
+
+// fetching search result from searched string
+async function fetchSearchResults(searcString) {
+  //searcString is the search input user entering
+  const endPoint = `${baseUrl}/search?key=${apiKey}&q=${searcString}&part=snippet&maxResults=2`;
+  console.log(`searchValue ${searcString}`);
+  try {
+    const response = await fetch(endPoint);
+    const result = await response.json();
+    // console.log(result);
+    // console.log(result.items[0].statistics);   //Undefined here
+
+    for(let i =0; i<result.items.length; i++){
+      let videoId = result.items[i].id.videoId;
+      let channelId = result.items[i].snippet.channelId;
+      let statistics = await getVideoStatistics(videoId);
+      let channelLogo = await fetchChannelLogo(channelId)
+      result.items[i].statistics = statistics;
+      result.items[i].channelLogo = channelLogo;
+    }
+    // console.log(result.items[0].statistics);    //ststictics here
+    renderVideosOntoUI(result.items);   
+   
+    // console.log(result.items);
+  } catch (error) {
+    alert("10,000 query per day exhausted");
+  }
+}
 
 function renderVideosOntoUI(videosList) {
   VideoCardsHolder.innerHTML = "";
@@ -162,14 +204,16 @@ function renderVideosOntoUI(videosList) {
   </div>
   <div class="bottomCard">
     <div class="channelDP">
-      <img src="imgs/User-Avatar-1.png" alt="channelLogo" />
+      <img src="${video.channelLogo}" alt="channelLogo" />
     </div>
     <div class="titleDisc">
       <p class="vidTitle">
        ${video.snippet.title}
       </p>
       <p class="channelName">${video.snippet.channelTitle}</p>
-      <p class="uploadTime">35M views • ${calculateTheTimeGap(video.snippet.publishTime)}</p>
+      <p class="uploadTime">${video.statistics.viewCount} • ${calculateTheTimeGap(
+        video.snippet.publishTime
+      )}</p>
     </div>
   </div>`;
 
@@ -177,63 +221,47 @@ function renderVideosOntoUI(videosList) {
   });
 }
 
-async function fetchSearchResults(searcString) {
-  //searcString is the search input user entering
-  const endPoint = `${baseUrl}/search?key=${apiKey}&q=${searcString}&part=snippet&maxResults=5`;
-  console.log(`searchValue ${searcString}`);
-  try {
-    const response = await fetch(endPoint);
-    const result = await response.json();
-    console.log(result);
-
-    renderVideosOntoUI(result.items);
-  } catch (error) {
-    alert("10,000 query per day exhausted");
-  }
-}
 
 searchBtn.addEventListener("click", () => {
   const searchValue = searchInput.value;
-  console.log(searchValue);
+  // console.log(searchValue);
   fetchSearchResults(searchValue);
 });
-fetchSearchResults("Ben 10 omnitrix full episodes");
-/**
- * {
-    "kind": "youtube#searchResult",
-    "etag": "AFIjzeAn3l7Thf4b1bfa6aKIuFQ",
-    "id": {
-        "kind": "youtube#video",
-        "videoId": "15U5zAPHoto"
-    },
-    "snippet": {
-        "publishedAt": "2023-10-28T20:39:45Z",
-        "channelId": "UCub3Vt-aSQjYnj62vmVzx8g",
-        "title": "when you&#39;re asian at hogwarts  #harrypotter #shorts",
-        "description": "",
-        "thumbnails": {
-            "default": {
-                "url": "https://i.ytimg.com/vi/15U5zAPHoto/default.jpg",
-                "width": 120,
-                "height": 90
-            },
-            "medium": {
-                "url": "https://i.ytimg.com/vi/15U5zAPHoto/mqdefault.jpg",
-                "width": 320,
-                "height": 180
-            },
-            "high": {
-                "url": "https://i.ytimg.com/vi/15U5zAPHoto/hqdefault.jpg",
-                "width": 480,
-                "height": 360
-            }
-        },
-        "channelTitle": "Magic By Mikaila",
-        "liveBroadcastContent": "none",
-        "publishTime": "2023-10-28T20:39:45Z"
-    }
-}
- * 
- * 
- * 
- */
+// fetchSearchResults("Ben 10 omnitrix full episodes");
+fetchSearchResults("tmkoc");
+
+// {
+//     "kind": "youtube#searchResult",
+//     "etag": "AFIjzeAn3l7Thf4b1bfa6aKIuFQ",
+//     "id": {
+//         "kind": "youtube#video",
+//         "videoId": "15U5zAPHoto"
+//     },
+//     "snippet": {
+//         "publishedAt": "2023-10-28T20:39:45Z",
+//         "channelId": "UCub3Vt-aSQjYnj62vmVzx8g",
+//         "title": "when you&#39;re asian at hogwarts  #harrypotter #shorts",
+//         "description": "",
+//         "thumbnails": {
+//             "default": {
+//                 "url": "https://i.ytimg.com/vi/15U5zAPHoto/default.jpg",
+//                 "width": 120,
+//                 "height": 90
+//             },
+//             "medium": {
+//                 "url": "https://i.ytimg.com/vi/15U5zAPHoto/mqdefault.jpg",
+//                 "width": 320,
+//                 "height": 180
+//             },
+//             "high": {
+//                 "url": "https://i.ytimg.com/vi/15U5zAPHoto/hqdefault.jpg",
+//                 "width": 480,
+//                 "height": 360
+//             }
+//         },
+//         "channelTitle": "Magic By Mikaila",
+//         "liveBroadcastContent": "none",
+//         "publishTime": "2023-10-28T20:39:45Z"
+//     },
+//     "statistics":
+// }
