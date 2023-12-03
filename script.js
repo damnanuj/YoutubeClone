@@ -164,7 +164,7 @@ async function fetchChannelLogo(channelId){
 // fetching search result from searched string
 async function fetchSearchResults(searcString) {
   //searcString is the search input user entering
-  const endPoint = `${baseUrl}/search?key=${apiKey}&q=${searcString}&part=snippet&maxResults=2`;
+  const endPoint = `${baseUrl}/search?key=${apiKey}&q=${searcString}&part=snippet&maxResults=10`;
   console.log(`searchValue ${searcString}`);
   try {
     const response = await fetch(endPoint);
@@ -173,12 +173,12 @@ async function fetchSearchResults(searcString) {
     // console.log(result.items[0].statistics);   //Undefined here
 
     for(let i =0; i<result.items.length; i++){
-      let videoId = result.items[i].id.videoId;
-      let channelId = result.items[i].snippet.channelId;
-      let statistics = await getVideoStatistics(videoId);
+      let videoId = result.items[i].id.videoId;  //extracting ith item videoId
+      let channelId = result.items[i].snippet.channelId;  //extracting ith item channelId
+      let statistics = await getVideoStatistics(videoId);  
       let channelLogo = await fetchChannelLogo(channelId)
-      result.items[i].statistics = statistics;
-      result.items[i].channelLogo = channelLogo;
+      result.items[i].statistics = statistics;   //Adding a statistics key to result object
+      result.items[i].channelLogo = channelLogo;  //Adding a channelLogo key to result object
     }
     // console.log(result.items[0].statistics);    //ststictics here
     renderVideosOntoUI(result.items);   
