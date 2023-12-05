@@ -147,8 +147,6 @@ async function getVideoStatistics(videoId) {
     console.log("failed to load statistics");
   }
 }
-// getVideoStatistics('zt5Vc_ZU6AU');
-
 // fetching channel Logo
 async function fetchChannelLogo(channelId){
   const endPoint = `${baseUrl}/channels?key=${apiKey}&id=${channelId}&part=snippet`;
@@ -160,17 +158,16 @@ async function fetchChannelLogo(channelId){
     console.log(`Failed to load channel logo for ${channelId}`);
   }
 }
-
 // fetching search result from searched string
 async function fetchSearchResults(searcString) {
   //searcString is the search input user entering
-  const endPoint = `${baseUrl}/search?key=${apiKey}&q=${searcString}&part=snippet&maxResults=10`;
+  const endPoint = `${baseUrl}/search?key=${apiKey}&q=${searcString}&part=snippet&maxResults=15`;
   console.log(`searchValue ${searcString}`);
   try {
     const response = await fetch(endPoint);
     const result = await response.json();
     // console.log(result);
-    // console.log(result.items[0].statistics);   //Undefined here
+    // console.log(result.items[0].statistics);  //Undefined here
 
     for(let i =0; i<result.items.length; i++){
       let videoId = result.items[i].id.videoId;  //extracting ith item videoId
@@ -221,14 +218,13 @@ function renderVideosOntoUI(videosList) {
   });
 }
 
-
 searchBtn.addEventListener("click", () => {
   const searchValue = searchInput.value;
   // console.log(searchValue);
   fetchSearchResults(searchValue);
 });
-// fetchSearchResults("Ben 10 omnitrix full episodes");
-fetchSearchResults("tmkoc");
+fetchSearchResults("Ben 10 omnitrix full episodes");
+// fetchSearchResults("tmkoc");
 
 // {
 //     "kind": "youtube#searchResult",
