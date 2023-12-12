@@ -108,7 +108,7 @@ updateSizeInfo();
 const apiKey = "AIzaSyCOzdiObyNRRonxDD24O20i0TcZY-dth20";
 const baseUrl = "https://www.googleapis.com/youtube/v3";
 
-// Calculating Upload time
+//Calculating Upload time
 function calculateTheTimeGap(publishTime) {
   let publishDate = new Date(publishTime);
   let currentDate = new Date();
@@ -133,7 +133,6 @@ function calculateTheTimeGap(publishTime) {
   return `${Math.ceil(secondsGap / secondsPerYear)} years ago`;
 }
 // THis function will take video id and returns the statics of the video
-
 async function getVideoStatistics(videoId) {
   // https://www.googleapis.com/youtube/v3/search?key={apiKey}&part=snippet&q=js&type=video
   const endpoint = `${baseUrl}/videos?key=${apiKey}&part=statistics&id=${videoId}`;
@@ -261,3 +260,23 @@ fetchSearchResults("Ben 10 omnitrix full episodes");
 //     },
 //     "statistics":
 // }
+
+const lightMode = document.querySelector(".lightMode");
+const rootElement = document.documentElement;
+
+document.addEventListener('DOMContentLoaded', function () {
+  lightMode.addEventListener('click', () => {
+    // Change the value of the --gray-light variable to black (#000000)
+    rootElement.style.setProperty('--gray-light', '#000000');
+    // Correct variable names for --black and --white
+    rootElement.style.setProperty('--black', '#fff');
+    rootElement.style.setProperty('--white', '#000000');
+    rootElement.style.setProperty('--gray-medium', '#fff');
+    console.log("inside darkmode");
+  });
+});
+
+
+
+
+// vdsv
