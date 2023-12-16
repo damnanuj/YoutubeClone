@@ -181,7 +181,7 @@ async function fetchSearchResults(searcString) {
    
     // console.log(result.items);
   } catch (error) {
-    alert("10,000 query per day exhausted");
+   console.log("10,000 query per day exhausted");
   }
 }
 
@@ -222,8 +222,8 @@ searchBtn.addEventListener("click", () => {
   // console.log(searchValue);
   fetchSearchResults(searchValue);
 });
-fetchSearchResults("Ben 10 omnitrix full episodes");
-// fetchSearchResults("tmkoc");
+// fetchSearchResults("Ben 10 omnitrix full episodes");
+fetchSearchResults("tmkoc");
 
 // {
 //     "kind": "youtube#searchResult",
@@ -261,22 +261,19 @@ fetchSearchResults("Ben 10 omnitrix full episodes");
 //     "statistics":
 // }
 
-const lightMode = document.querySelector(".lightMode");
-const rootElement = document.documentElement;
+// const lightMode = document.querySelector(".lightMode");
+// const rootElement = document.documentElement;
 
-document.addEventListener('DOMContentLoaded', function () {
-  lightMode.addEventListener('click', () => {
-    // Change the value of the --gray-light variable to black (#000000)
-    rootElement.style.setProperty('--gray-light', '#000000');
-    // Correct variable names for --black and --white
-    rootElement.style.setProperty('--black', '#fff');
-    rootElement.style.setProperty('--white', '#000000');
-    rootElement.style.setProperty('--gray-medium', '#fff');
-    console.log("inside darkmode");
-  });
-});
-
-
+// document.addEventListener('DOMContentLoaded', function () {
+//   lightMode.addEventListener('click', () => {
+//     // Change the value of the --gray-light variable to black (#000000)
+//     rootElement.style.setProperty('--gray-light', '#000000');
+//     // Correct variable names for --black and --white
+//     rootElement.style.setProperty('--black', '#fff');
+//     rootElement.style.setProperty('--white', '#000000');
+//     rootElement.style.setProperty('--gray-medium', '#fff');
+//     console.log("inside darkmode");
+//   });
+// });
 
 
-// vdsv
