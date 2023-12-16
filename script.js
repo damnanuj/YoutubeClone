@@ -181,7 +181,7 @@ async function fetchSearchResults(searcString) {
    
     // console.log(result.items);
   } catch (error) {
-   console.log("10,000 query per day exhausted");
+   console.log("Some error in rendering/10,000 query per day exhausted");
   }
 }
 
