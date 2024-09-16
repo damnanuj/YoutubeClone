@@ -8,19 +8,51 @@
   text-decoration: none;
   list-style: none;
 }
+
+body {
+  background-color: #0F0F0F;
+}
+
 body::-webkit-scrollbar {
-  display: none; /* width of the entire scrollbar */
+  display: none;
+  /* width of the entire scrollbar */
+
 }
+.loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 48px;
+  width: 48px;
+  border: 5px solid #FFF;
+  border-bottom-color: #ff0000;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+
+  
+  transform: translate(-50%, -50%);
+}
+
+  @keyframes rotation {
+  0% {
+      transform: rotate(0deg);
+  }
+  100% {
+      transform: rotate(360deg);
+  }
+  } 
+
 :root {
-  --black: #000000;
-  --gray-black: #121212;
-  --gray-medium: #212121;
-  --gray-light: var(--gray-light);
-  --text-color: #000;
-  --white:#fff;
+  --black: #0F0F0F;
+  --grey-color: #272727;
+  --hover-color: #222222;
+  --white: #f5f5f5;
 }
+
 header {
-  background-color: var(--gray-medium);
+
   width: 100%;
   height: 70px;
   border-bottom: 1.5px solid var(--gray-light);
@@ -40,6 +72,7 @@ header {
   margin-left: 40px;
   gap: 1rem;
 }
+
 .bars {
   display: flex;
   align-items: center;
@@ -52,10 +85,12 @@ header {
   /* background-color: blue; */
   gap: 0.3rem;
 }
+
 .fa-youtube {
   color: red;
   font-size: 22px;
 }
+
 .YtText {
   color: var(--white);
   font-size: 20px;
@@ -72,7 +107,7 @@ header {
 }
 
 .searchBtn {
-  background-color: var(--gray-light);
+  background-color: var(--grey-color);
   height: 100%;
   width: 70px;
   display: flex;
@@ -84,13 +119,26 @@ header {
   outline: none;
   border: none;
   border-top-right-radius: 30px;
-    border-bottom-right-radius: 30px;
+  cursor: pointer;
+  border-bottom-right-radius: 30px;
+  border: 1px solid var(--grey-color);
 }
+
+.searchMobile {
+  color: var(--white);
+  display: none !important;
+}
+
+
+
+
+
 .searchBtn:hover {
   background-color: var(--gray-black);
 }
+
 .mic {
-  background-color: var(--black);
+  background-color: var(--grey-color);
   height: 100%;
   width: 45px;
   display: flex;
@@ -102,22 +150,24 @@ header {
   font-size: 20px;
   transition: all 0.2s ease-in-out;
 }
+
 .mic:hover {
   background-color: var(--gray-light);
 }
 
 .searchInput {
-  background-color: var(--gray-black);
+  background-color: var(--black);
+  border: 1px solid var(--grey-color);
   height: 100%;
   color: #aaaaaa;
   flex-grow: 1;
   padding-left: 20px;
   outline: none;
-  border: none;
+
   font-size: 18px;
   border-bottom-left-radius: 30px;
   border-top-left-radius: 30px;
-  border: 1.5px solid var(--gray-light);
+
 }
 
 .ProfileRight {
@@ -127,20 +177,24 @@ header {
   height: 100%;
   gap: 1.5rem;
 }
+
 .ProfileRight a {
   display: flex;
   justify-content: center;
   align-items: center;
   transition: all 0.2s ease-in-out;
 }
+
 .ProfileRight a:hover {
   /* transform: rotate(5deg); */
   transform: scale(1.1);
 }
+
 .ProfileRight a img {
   width: 19px;
 }
-#createVid > img {
+
+#createVid>img {
   width: 25px;
 }
 
@@ -161,7 +215,7 @@ header {
 /* Main screeen */
 
 .mainScreen {
-  background-color: var(--gray-black);
+
   width: 100%;
   height: 89vh;
   display: flex;
@@ -170,7 +224,7 @@ header {
 
 .leftNavBAr {
   width: 20%;
-  background-color: var(--gray-medium);
+  border-right: 1px solid var(--grey-color);
   overflow-y: scroll;
   display: flex;
   flex-direction: column;
@@ -182,37 +236,34 @@ header {
   transition: all 0.3s linear;
 }
 
+
+
 .leftNavBAr::-webkit-scrollbar {
-  width: 10px; /* width of the entire scrollbar */
+  display: none;
+  /* width of the entire scrollbar */
+
 }
 
-/* .leftNavBAr::-webkit-scrollbar-track {
-         color of the tracking area
-} */
 
-.leftNavBAr::-webkit-scrollbar-thumb {
-  background-color: #4e4e4e; /* color of the scroll thumb */
-  border-radius: 20px;
-  /* roundness of the scroll thumb */
-  /* creates padding around scroll thumb */
-}
 
 .homeExplore {
   margin-top: 5px;
 }
+
 .homeExplore,
 .library {
-  /* background-color: red; */
+
   width: 100%;
-  border-bottom: 1.5px solid var(--gray-light);
+  border-bottom: 1.5px solid var(--grey-color);
   padding-bottom: 5px;
 }
+
 .library {
   padding-top: 10px;
 }
 
 #activeNav {
-  background-color: var(--gray-light);
+  background-color: var(--grey-color);
 }
 
 .navs {
@@ -233,13 +284,16 @@ header {
   margin-bottom: 5px;
   overflow-x: hidden;
 }
+
 .navs:hover {
-  background-color: var(--gray-light);
+  background-color: var(--grey-color);
 }
+
 .navs a {
   width: max-content;
   overflow-x: hidden;
 }
+
 .navs img {
   width: 20px;
 }
@@ -273,19 +327,25 @@ header {
   padding: 0 25px 0 25px;
 }
 
+.suggestionHeading::-webkit-scrollbar {
+  display: none;
+  /* width of the entire scrollbar */
+
+}
+
 .suggestionHeading .items {
   padding: 8px 15px;
   background-color: var(--gray-medium);
 
   border-radius: 10px;
 }
+
 .items a {
   color: var(--white);
   width: max-content;
 }
-.suggestionHeading::-webkit-scrollbar {
-  display: none; /* width of the entire scrollbar */
-}
+
+
 
 /* Video Card */
 
@@ -293,15 +353,18 @@ header {
   display: grid;
   width: 100%;
   height: 87%;
-  grid-template-columns: repeat(3, 1fr); /* 3 columns with equal width */
+  grid-template-columns: repeat(3, 1fr);
+  /* 3 columns with equal width */
   grid-row-gap: 15px;
   grid-column-gap: 25px;
   padding: 0 25px 0 25px;
   /* background-color: pink; */
   overflow-y: scroll;
 }
+
 .VideoCardsHolder::-webkit-scrollbar {
-  width: 10px; /* width of the entire scrollbar */
+  width: 10px ;
+ 
 }
 
 /* .leftNavBAr::-webkit-scrollbar-track {
@@ -309,19 +372,20 @@ header {
 } */
 
 .VideoCardsHolder::-webkit-scrollbar-thumb {
-  background-color: #4e4e4e; /* color of the scroll thumb */
-  border-radius: 20px;
-  /* roundness of the scroll thumb */
-  /* creates padding around scroll thumb */
+  background-color: #4e4e4e ;
+ 
+  border-radius: 20px ;
+
 }
 
 .videoCard {
   /* background-color: aqua; */
 
-  width: 325px;
+  width: 100%;
   /* border: 1px solid var(--gray-light); */
   border-radius: 11px;
 }
+
 .bottomCard {
   width: 100%;
   margin-top: 5px;
@@ -330,26 +394,33 @@ header {
   display: flex;
   gap: 1.2rem;
 }
-.thumbnail{
+
+.thumbnail {
   position: relative;
-  /* background-color: red; */
-  width: 340px;
-  height: 190px;
+ 
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 10px;
 }
-.timeStamp{
+
+.timeStamp {
   position: absolute;
   bottom: 10px;
   right: 10px;
   color: var(--white);
-  font-size: 13.5px;
-  font-weight: 500;
+  font-size: 13px;
+  font-weight: 400;
 }
-.thumbImg{
+
+.thumbImg {
   width: 100%;
   height: 100%;
-  
+  object-fit: cover;
   border-radius: 10px;
+  
 }
+
 .channelDP img {
   width: 40px;
   height: 40px;
@@ -367,11 +438,13 @@ header {
   color: var(--white);
   font-weight: 500;
 }
+
 .channelName {
   color: gray;
   font-size: 14px;
   font-weight: 500;
 }
+
 .uploadTime {
   color: gray;
   font-size: 13px;
@@ -379,93 +452,71 @@ header {
 }
 
 @media only screen and (max-width: 600px) {
-  header {
-    height: 56px;
-    justify-content: center;
-  }
-  .rightVideosCard {
-    width: 100%;
-  }
-  .fa-youtube {
-    font-size: 22px;
-  }
-  .logoText{
-    display: flex;
-    align-items: center;
-  }
-  .YtText {
-    font-weight: 400;
-    margin-left: 4px;
-  }
-  .leftNavBAr {
-    width: 0;
-  }
-  .searchInput{
-    display: none;
-  }
-  .mic {
-    display: none;
-  }
-  #dots {
-    display: none;
-  }
-  #createVid {
-    display: none;
-  }
-  .bars {
-    display: none;
-  }
-  .notiBell{
-    display: none;
+
+  .YtText,
+  .mic,
+  .createVid,
+  .dots,
+  .notiBell {
+    display: none !important;
   }
 
-  .SearchBar {
-    margin-left: 160px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-  }
-  .searchBtn {
-    height: 0;
-    width: 0;
-    
-    font-size: 20px;
-  }
-  
-  .profile {
-    width: 32px;
-    height: 32px;
+  header {
+    gap: 10px;
   }
 
   .ProfileRight {
     margin-right: 20px;
-  }
-  .logoRight {
-    margin-left: 20px;
+    gap: 0;
   }
 
-  .suggestionHeading {
-    padding: 0 15px 0 15px;
-    margin-bottom: 2px;
-    width: 100%;
+  .logoRight {
+    margin-left: 30px;
+  }
+
+  .SearchBar {
+    width: 250px;
+  }
+
+  .SearchBar {
+    .searchInput {
+      font-size: 15px;
+    }
+  }
+
+ 
+
+  .navs {
+width: fit-content;
+    padding-left: 30px;
+    padding-right: 25px;
+
+    p {
+      display: none;
+    }
   }
 
   .VideoCardsHolder {
     grid-template-columns: repeat(1, 1fr);
-    grid-row-gap: 15px;
-    justify-content: center;
+    height: 95%;
   }
-  .videoCard {
-
-    width: 326px;
-    border-radius: 11px;
+  .VideoCardsHolder::-webkit-scrollbar {
+    display: none;
+   
   }
 
-  .mainScreen {
-    height: 93vh;
+  .rightVideosCard {
+  
+    background-color: #0F0F0F;
   }
-} 
+  .leftNavBar {
+    width: 0 ;
+  }
+
+  .rightVideosCard {
+    width: 100% ;
+  }
+}
 
 
 /* @media only screen and (max-width: 600px) {

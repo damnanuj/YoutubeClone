@@ -28,16 +28,20 @@
       <!-- Search  Bar -->
       <div class="SearchBar">
         <input type="text" placeholder="Search" class="searchInput" />
-        <button class="searchBtn" href="#"
-          ><i class="fa-solid fa-magnifying-glass"></i
-        ></button>
+        <button class="searchBtn" type="submit">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+
+        <i class="fa-solid fa-magnifying-glass searchMobile"></i>
         <a href="#" class="mic"><i class="fa-solid fa-microphone"></i></a>
       </div>
 
       <div class="ProfileRight">
-        <a href="#" id="createVid"><img src="imgs/createVid.svg" alt="" /></a>
-        <a id="dots" href="#"><img src="imgs/dots.svg" alt="" /></a>
-        <a href="#"><img  class="notiBell" src="imgs/notiBell.svg" alt="" /></a>
+        <a href="#" class="createVid"
+          ><img src="imgs/createVid.svg" alt=""
+        /></a>
+        <a class="dots" href="#"><img src="imgs/dots.svg" alt="" /></a>
+        <a href="#"><img class="notiBell" src="imgs/notiBell.svg" alt="" /></a>
         <img class="profile" src="imgs/profile.jpg" alt="Profile" />
       </div>
     </header>
@@ -152,8 +156,11 @@
 
         <!---------------------- Video Cards---------------- -->
         <div class="VideoCardsHolder">
+          
+          <div id="loader" class="loader" style="display:none;"></div>
 
-          <div class="videoCard">
+
+          <!-- <div class="videoCard">
             <div class="thumbnail">
               <img  class="thumbImg" src="imgs/thumbnail1.jpg" alt="thumbnail" />
               <p class="timeStamp">5:10</p>
@@ -170,13 +177,11 @@
                 <p class="uploadTime">35M views • 6 days ago</p>
               </div>
             </div>
-          </div>
-          
-
+          </div> -->
         </div>
       </div>
     </div>
 
-    <script src="script.js"></script>
+    <script type="module" src="script.js"></script>
   </body>
 </html>
