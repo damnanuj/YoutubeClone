@@ -411,6 +411,9 @@ header {
   color: var(--white);
   font-size: 13px;
   font-weight: 400;
+  background-color: #00000075;
+  padding: 3px 5px;
+  border-radius: 5px;
 }
 
 .thumbImg {
@@ -451,7 +454,7 @@ header {
   font-weight: 500;
 }
 
-@media only screen and (max-width: 600px) {
+@media (max-width: 600px) {
 
   .YtText,
   .mic,
@@ -471,16 +474,16 @@ header {
   }
 
   .logoRight {
-    margin-left: 30px;
+    margin-left: 20px;
   }
 
   .SearchBar {
-    width: 250px;
+    width: 230px;
   }
 
   .SearchBar {
     .searchInput {
-      font-size: 15px;
+      font-size: 14px;
     }
   }
 
