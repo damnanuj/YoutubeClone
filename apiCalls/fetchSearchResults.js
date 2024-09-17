@@ -6,7 +6,7 @@ import { getVideoStatistics } from "./getVideoStatistics.js";
 export async function fetchSearchResults(searchString) {
   console.log(searchString);
     showLoader();
-    const endPoint = `${baseUrl}/search?key=${apiKey}&q=${searchString}&part=snippet&type=video&maxResults=1`; // type=video' to the query
+    const endPoint = `${baseUrl}/search?key=${apiKey}&q=${searchString}&part=snippet&type=video&maxResults=6`; // type=video' to the query
     try {
       const response = await fetch(endPoint);
       const result = await response.json();

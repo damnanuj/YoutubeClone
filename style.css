@@ -495,13 +495,12 @@ transition: all 0.3s ease;
 
   .SearchBar {
     width: 230px;
-  }
-
-  .SearchBar {
     .searchInput {
       font-size: 14px;
     }
   }
+
+  
 
  
 
