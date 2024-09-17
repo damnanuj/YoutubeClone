@@ -37,6 +37,7 @@ const VideoCardsHolder = document.querySelector(".VideoCardsHolder");
 
 let videoCard;
 export function renderVideosOntoUI(videosList) {
+ 
   console.log(videosList);
   VideoCardsHolder.innerHTML = "";
   // here videosList will be an array of videos objects
@@ -55,23 +56,29 @@ export function renderVideosOntoUI(videosList) {
             <img src="${video.channelLogo}" alt="channelLogo" />
           </div>
       <div class="titleDisc">
-          <p class="vidTitle">${video.snippet.title}</p>
-          <p class="channelName">${video.snippet.channelTitle}</p>
-          <p class="uploadTime">${
+          <p class="vidTitle">${video.snippet.title} </p>
+          <div>
+            <p class="channelName">${video.snippet.channelTitle}</p>
+            <p class="uploadTime">${
             formatViewCount(video.statistics.viewCount)
           } • ${calculateTheTimeGap(video.snippet.publishTime)}</p>
+           </div>
       </div>
   </div>`;
 
     VideoCardsHolder.appendChild(videoCard);
   });
+  
 }
 
 fetchSearchResults(getRandomSearchString())
 
 
 searchBtn.addEventListener("click", function () {
-  const searchValue = searchInput.value;
-  fetchSearchResults(searchValue);
+  const searchValue = searchInput.value.trim();
+  // adding loader before loading the content
+  VideoCardsHolder.innerHTML = ` <div id="loader" class="loader" style="display:none;"></div>`
+    fetchSearchResults(searchValue);
+  
 });
 

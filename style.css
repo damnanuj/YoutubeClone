@@ -21,7 +21,7 @@ body::-webkit-scrollbar {
 .loader {
   position: absolute;
   top: 50%;
-  left: 50%;
+  left: 46%;
   height: 48px;
   width: 48px;
   border: 5px solid #FFF;
@@ -46,8 +46,8 @@ body::-webkit-scrollbar {
 
 :root {
   --black: #0F0F0F;
-  --grey-color: #272727;
-  --hover-color: #222222;
+  --grey-color: #222222;
+  --hover-color: #303030;
   --white: #f5f5f5;
 }
 
@@ -134,7 +134,7 @@ header {
 
 
 .searchBtn:hover {
-  background-color: var(--gray-black);
+  background-color: var(--hover-color);
 }
 
 .mic {
@@ -152,7 +152,7 @@ header {
 }
 
 .mic:hover {
-  background-color: var(--gray-light);
+  background-color: var(--hover-color);
 }
 
 .searchInput {
@@ -335,9 +335,13 @@ header {
 
 .suggestionHeading .items {
   padding: 8px 15px;
-  background-color: var(--gray-medium);
-
+  background-color: var(--grey-color);
+transition: all 0.3s ease;
   border-radius: 10px;
+  cursor: pointer;
+}
+.items:hover{
+  background-color: var(--hover-color);
 }
 
 .items a {
@@ -350,6 +354,7 @@ header {
 /* Video Card */
 
 .VideoCardsHolder {
+  margin-top: 5px;
   display: grid;
   width: 100%;
   height: 87%;
@@ -384,6 +389,11 @@ header {
   width: 100%;
   /* border: 1px solid var(--gray-light); */
   border-radius: 11px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+.videoCard:hover{
+  transform: scale(1.01);
 }
 
 .bottomCard {
@@ -399,7 +409,7 @@ header {
   position: relative;
  
   width: 100%;
-  height: 200px;
+  height:183px;
   overflow: hidden;
   border-radius: 10px;
 }
@@ -434,6 +444,12 @@ header {
   display: flex;
   flex-direction: column;
   gap: 0.3rem;
+  div{
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+ 
 }
 
 .vidTitle {
@@ -498,10 +514,38 @@ width: fit-content;
       display: none;
     }
   }
-
+  .suggestionHeading{
+    padding: 0 10px;
+  }
   .VideoCardsHolder {
     grid-template-columns: repeat(1, 1fr);
     height: 95%;
+    padding: 0;
+    .videoCard{
+      .thumbnail{
+        height: 200px;
+        border-radius: 0 ;
+        .thumbImg{
+          border-radius: 0;
+        }
+      }
+      .bottomCard{
+        padding: 5px 25px;
+        
+      }
+    }
+  }
+  .titleDisc{
+   
+   
+    div{
+     
+      width: 100%;
+      display: flex !important;
+      flex-direction: row;
+      align-items: center;
+      gap:1rem;
+    }
   }
   .VideoCardsHolder::-webkit-scrollbar {
     display: none;
