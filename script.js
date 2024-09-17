@@ -1,7 +1,10 @@
 import { fetchSearchResults } from "./apiCalls/fetchSearchResults.js";
+import { getRandomApiKey } from "./functions/randomApiKey.js";
 import { getRandomSearchString } from "./functions/randomSearchString.js";
 import { calculateTheTimeGap } from "./functions/uploadTimeCalculate.js";
 import { formatViewCount } from "./functions/viewsCalculate.js";
+
+
 
 
 const bars = document.querySelector(".bars");
@@ -26,8 +29,10 @@ function hideLeftNav(e) {
   }
 }
                 
-// export const apiKey = "AIzaSyCOzdiObyNRRonxDD24O20i0TcZY-dth20"; //mine
-export const apiKey = "AIzaSyBJrJHRcfvW07ah3ZzVV0xbQ1vKgK8Uy1U";
+
+
+// export const apiKey = "dth20"; //mine
+export const apiKey = getRandomApiKey();
 export const baseUrl = "https://www.googleapis.com/youtube/v3";
 
 const searchInput = document.querySelector(".searchInput");
