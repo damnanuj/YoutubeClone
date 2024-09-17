@@ -494,9 +494,13 @@ transition: all 0.3s ease;
   }
 
   .SearchBar {
-    width: 230px;
+    width: 230px !important;
     .searchInput {
-      font-size: 14px;
+      width: 180px;
+      font-size: 14px !important;
+    }
+    .searchBtn{
+      font-size: 15px !important;
     }
   }
 
