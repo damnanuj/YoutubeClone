@@ -13,7 +13,7 @@ body {
   background-color: #0F0F0F;
 }
 
-body::-webkit-scrollbar {
+*::-webkit-scrollbar {
   display: none;
   /* width of the entire scrollbar */
 
@@ -65,8 +65,9 @@ body::-webkit-scrollbar {
 header {
 
   width: 100%;
+  background-color: var(--black);
   height: 70px;
-  border-bottom: 1.5px solid var(--gray-light);
+  border-bottom: 1.5px solid var(--hover-color);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -115,6 +116,9 @@ header {
   align-items: center;
   /* background-color: blue; */
   justify-content: space-between;
+  .searchInput:focus{
+    border: 1px solid rgb(0, 191, 255);
+  }
 }
 
 .searchBtn {

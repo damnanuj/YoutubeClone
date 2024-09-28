@@ -72,11 +72,22 @@ export function renderVideosOntoUI(videosList) {
   </div>`;
 
     VideoCardsHolder.appendChild(videoCard);
+          
+    
   });
   
 }
+// ===Event delegation:listener to the parent container=====
+VideoCardsHolder.addEventListener("click", (event) => {
+ 
+  if (event.target.closest(".videoCard")) {
+    window.location.pathname = "/video.html";
+  }
+});
 
 fetchSearchResults(getRandomSearchString())
+
+
 
 
 searchBtn.addEventListener("click", function () {
